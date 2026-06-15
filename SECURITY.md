@@ -13,8 +13,9 @@ commands, GitHub access, and workflow artifacts.
 ## Reporting a vulnerability
 
 Report suspected vulnerabilities privately through GitHub private vulnerability
-reporting when it is enabled for this repository. If that isn't available,
-contact the maintainer directly before publishing details.
+reporting at
+`https://github.com/iamfj/pi-stack-ops/security/advisories/new`. If that isn't
+available, contact the maintainer directly before publishing details.
 
 Include:
 
