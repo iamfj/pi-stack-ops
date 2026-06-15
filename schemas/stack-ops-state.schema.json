@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/iamfj/pi-stack-ops/main/schemas/stack-ops-state.schema.json",
+  "title": "Stack Ops State",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["version", "phase", "blockers", "next", "updatedAt"],
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "format": "uri"
+    },
+    "version": {
+      "const": 1
+    },
+    "phase": {
+      "enum": ["idle", "draft", "discuss", "plan", "implement", "finish", "iterate", "blocked"]
+    },
+    "stack": {
+      "type": "string"
+    },
+    "slice": {
+      "type": "string"
+    },
+    "branch": {
+      "type": "string"
+    },
+    "plan": {
+      "type": "string"
+    },
+    "gates": {
+      "type": "string"
+    },
+    "blockers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "summary"],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "summary": {
+            "type": "string"
+          },
+          "severity": {
+            "enum": ["info", "warning", "blocking"]
+          }
+        }
+      }
+    },
+    "next": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "updatedAt": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}
