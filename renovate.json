@@ -1,0 +1,105 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:recommended",
+    ":dependencyDashboard",
+    ":semanticCommits",
+    ":semanticCommitTypeAll(chore)",
+    ":pinGitHubActionDigests",
+    ":prHourlyLimit1",
+    ":prConcurrentLimit3"
+  ],
+  "timezone": "Europe/Berlin",
+  "schedule": ["before 6am on monday"],
+  "labels": ["dependencies"],
+  "assigneesFromCodeOwners": true,
+  "dependencyDashboardTitle": "Dependency Dashboard",
+  "dependencyDashboardApproval": true,
+  "dependencyDashboardOSVVulnerabilitySummary": "all",
+  "osvVulnerabilityAlerts": true,
+  "vulnerabilityAlerts": {
+    "enabled": true,
+    "labels": ["dependencies", "security"],
+    "assigneesFromCodeOwners": true,
+    "dependencyDashboardApproval": false,
+    "schedule": []
+  },
+  "lockFileMaintenance": {
+    "enabled": true,
+    "schedule": ["before 6am on monday"],
+    "dependencyDashboardApproval": true
+  },
+  "minimumReleaseAge": "3 days",
+  "internalChecksFilter": "strict",
+  "ignoreScripts": true,
+  "rangeStrategy": "bump",
+  "separateMajorMinor": true,
+  "separateMultipleMajor": true,
+  "rebaseWhen": "conflicted",
+  "automerge": false,
+  "platformAutomerge": false,
+  "ignorePaths": [
+    "node_modules/**",
+    "dist/**",
+    "bin/stack-ops.js",
+    ".pi/**",
+    ".stack-ops/**"
+  ],
+  "packageRules": [
+    {
+      "description": "Keep GitHub Actions together and pinned to digests.",
+      "matchManagers": ["github-actions"],
+      "groupName": "github-actions",
+      "labels": ["dependencies", "ci"],
+      "dependencyDashboardApproval": true
+    },
+    {
+      "description": "Group non-major Bun/npm development tooling updates.",
+      "matchManagers": ["bun", "npm"],
+      "matchDepTypes": ["devDependencies"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "groupName": "dev tooling",
+      "labels": ["dependencies", "tooling"],
+      "dependencyDashboardApproval": true
+    },
+    {
+      "description": "Group TypeScript and Node/Bun type packages.",
+      "matchPackageNames": ["typescript", "@types/**"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "groupName": "typescript types and compiler",
+      "labels": ["dependencies", "tooling"],
+      "dependencyDashboardApproval": true
+    },
+    {
+      "description": "Keep semantic-release ecosystem updates together.",
+      "matchPackageNames": ["semantic-release", "@semantic-release/**"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "groupName": "semantic-release",
+      "labels": ["dependencies", "release"],
+      "dependencyDashboardApproval": true
+    },
+    {
+      "description": "Group non-major production dependency updates separately from tooling.",
+      "matchManagers": ["bun", "npm"],
+      "matchDepTypes": ["dependencies"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "groupName": "production dependencies",
+      "labels": ["dependencies", "runtime"],
+      "dependencyDashboardApproval": true
+    },
+    {
+      "description": "Never batch major updates; require explicit dashboard approval.",
+      "matchUpdateTypes": ["major"],
+      "dependencyDashboardApproval": true,
+      "labels": ["dependencies", "breaking-change"]
+    },
+    {
+      "description": "Security fixes should be prompt and visible, not blocked by the weekly schedule.",
+      "matchDatasources": ["osv"],
+      "labels": ["dependencies", "security"],
+      "dependencyDashboardApproval": false,
+      "schedule": [],
+      "minimumReleaseAge": null
+    }
+  ]
+}
