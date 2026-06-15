@@ -5,7 +5,7 @@
 *AI-assisted stacked PRs with clear human checkpoints*
 
 [![Node.js](https://img.shields.io/badge/Node.js-%3E%3D20-3c873a?style=flat-square)](https://nodejs.org)
-[![Pi](https://img.shields.io/badge/Pi-%3E%3D0.74.0-blue?style=flat-square)](https://github.com/earendil-works/pi-coding-agent)
+[![Pi](https://img.shields.io/badge/Pi-%3E%3D0.74.0-blue?style=flat-square)](https://github.com/earendil-works/pi)
 [![npm version](https://img.shields.io/npm/v/pi-stack-ops?style=flat-square)](https://www.npmjs.com/package/pi-stack-ops)
 
 </div>
@@ -216,8 +216,7 @@ Use `pi-stack-ops` when you want AI help without losing the review trail.
 Use `pi-stack-ops` inside a repository where you want to manage a stacked
 change.
 
-- [Pi coding agent](https://www.npmjs.com/package/@earendil-works/pi-coding-agent)
-  `>=0.74.0 <1`
+- [Pi coding agent](https://github.com/earendil-works/pi) `>=0.74.0 <1`
 - [Node.js](https://nodejs.org) `>=20`
 - [Git](https://git-scm.com)
 - [stax](https://github.com/cesarferreira/stax), the stacked-branch tool used
@@ -225,7 +224,7 @@ change.
 - [GitHub CLI](https://cli.github.com) for GitHub PR operations
 - Optional: [Semble](https://github.com/MinishLab/semble) for code discovery
   during planning
-- Optional: [code-review-graph](https://github.com/iamfj/code-review-graph) for
+- Optional: [code-review-graph](https://github.com/tirth8205/code-review-graph) for
   read-only dependency, call-path, and blast-radius analysis during
   impact-sensitive work
 
