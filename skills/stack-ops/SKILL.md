@@ -34,6 +34,13 @@ Use namespaced agents:
 - `stack-ops.slice-builder`
 - `stack-ops.reviewer`
 - `stack-ops.security-reviewer`
+- `stack-ops.bug-hunter`
+- `stack-ops.test-strategist`
+- `stack-ops.contract-reviewer`
+- `stack-ops.delivery-engineer`
+- `stack-ops.data-reliability-engineer`
+- `stack-ops.performance-engineer`
+- `stack-ops.search-rag-engineer`
 - `stack-ops.workflow-reviewer`
 - `stack-ops.validator`
 - `stack-ops.readiness`

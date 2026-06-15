@@ -14,7 +14,11 @@ Rules:
 - Implement at most one slice unless direct current-session human approval names the extra slice.
 - Use `stack-ops.slice-builder` as the single writer.
 - Run `stack-ops.validator` for focused validation.
-- Run fresh-context `stack-ops.reviewer` and, when relevant, `stack-ops.security-reviewer`.
+- Run fresh-context `stack-ops.reviewer` and relevant specialists, such as
+  `stack-ops.security-reviewer`, `stack-ops.bug-hunter`,
+  `stack-ops.test-strategist`, `stack-ops.contract-reviewer`,
+  `stack-ops.delivery-engineer`, `stack-ops.data-reliability-engineer`,
+  `stack-ops.performance-engineer`, or `stack-ops.search-rag-engineer`.
 - Use `stack-ops.blocker-resolver` only for accepted blocker fixes.
 - Use `stack-ops.readiness` before advancing or submitting/updating PRs.
 - Before starting another slice, run `stack-ops context-budget --guard next-slice --out .pi/stack-ops/context-budget/implement-<slice>.json --json`; continue only on `continue` and stop with a handoff on `stop` or `unknown`.
