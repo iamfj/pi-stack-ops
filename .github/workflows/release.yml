@@ -48,7 +48,7 @@ jobs:
         with:
           fetch-depth: 0
       - name: Setup Node.js
-        uses: actions/setup-node@11d1e78562b3b129950aa4311a307d06eaa9347d
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
         with:
           node-version: 24
       - name: Setup Bun
