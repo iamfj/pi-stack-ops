@@ -8,7 +8,7 @@ const maxStringLength = 240;
 const maxArrayItems = 20;
 const stateSchema = "https://raw.githubusercontent.com/iamfj/pi-stack-ops/main/schemas/stack-ops-state.schema.json";
 
-export type Phase = "idle" | "draft" | "discuss" | "plan" | "implement" | "finish" | "iterate" | "blocked";
+export type Phase = "idle" | "draft" | "discuss" | "plan" | "implement" | "finish" | "iterate" | "merge" | "blocked";
 
 export type StackOpsState = {
   "$schema"?: string;
@@ -64,7 +64,7 @@ function optionalString(value: unknown) {
 export function sanitizeState(inputState: unknown): StackOpsState {
   const state = inputState && typeof inputState === "object" ? inputState as Record<string, unknown> : {};
   const fallback = defaultState();
-  const phases = new Set<Phase>(["idle", "draft", "discuss", "plan", "implement", "finish", "iterate", "blocked"]);
+  const phases = new Set<Phase>(["idle", "draft", "discuss", "plan", "implement", "finish", "iterate", "merge", "blocked"]);
   const rawBlockers = Array.isArray(state.blockers) ? state.blockers.slice(0, maxArrayItems) : [];
   const rawNext = Array.isArray(state.next) ? state.next.slice(0, maxArrayItems) : [];
 

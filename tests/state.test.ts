@@ -53,6 +53,18 @@ describe("stack-ops state", () => {
     expect((statSync(context.stateFile).mode & 0o777).toString(8)).toBe("600");
   });
 
+  test("accepts the merge workflow phase", () => {
+    const state = sanitizeState({ phase: "merge", next: ["stax merge --when-ready"] });
+
+    expect(state.phase).toBe("merge");
+  });
+
+  test("state schema lists the expected workflow phases", () => {
+    const schema = JSON.parse(readFileSync(join(import.meta.dir, "..", "schemas", "stack-ops-state.schema.json"), "utf8"));
+
+    expect(schema.properties.phase.enum).toEqual(["idle", "draft", "discuss", "plan", "implement", "finish", "iterate", "merge", "blocked"]);
+  });
+
   test("renders status text for CLI and extension entrypoints", () => {
     const text = renderState({ ...sanitizeState({ phase: "implement", stack: "demo", next: ["/finish"] }), updatedAt: "now" });
 

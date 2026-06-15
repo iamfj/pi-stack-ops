@@ -14,7 +14,7 @@
       "const": 1
     },
     "phase": {
-      "enum": ["idle", "draft", "discuss", "plan", "implement", "finish", "iterate", "blocked"]
+      "enum": ["idle", "draft", "discuss", "plan", "implement", "finish", "iterate", "merge", "blocked"]
     },
     "stack": {
       "type": "string"
