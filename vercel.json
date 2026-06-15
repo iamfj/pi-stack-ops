@@ -1,5 +1,6 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
   "buildCommand": "export PATH=\"$HOME/.local/bin:$PATH\" && uv run mkdocs build --strict",
   "installCommand": "curl -LsSf https://astral.sh/uv/install.sh | sh && export PATH=\"$HOME/.local/bin:$PATH\" && uv sync --frozen",
   "outputDirectory": "site"
