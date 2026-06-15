@@ -3,7 +3,7 @@ import { mkdirSync, rmSync, writeFileSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { cleanTarget } from "../core/clean.js";
 import { evaluateContextBudget, printContextBudgetSnapshot, writeActiveSession } from "../core/context-budget.js";
-import { getDoctorChecks } from "../core/doctor.js";
+import { doctorPassed, getDoctorChecks } from "../core/doctor.js";
 import { createContext, defaultState, ensureDirs, readState, renderState, writeState } from "../core/state.js";
 
 const statusKeys = {
@@ -108,8 +108,8 @@ async function command(args: string, ctx: ExtensionCommandContext): Promise<void
 
   if (action === "doctor") {
     const checks = getDoctorChecks(context);
-    const text = checks.map(([name, ok]) => `${ok ? "✓" : "⚠"} ${name}`).join("\n");
-    ctx.ui.notify(`stack-ops doctor\n\n${text}`, checks.every(([, ok]) => ok) ? "info" : "warning");
+    const text = checks.map((check) => `${check.ok ? "✓" : "⚠"} ${check.name}`).join("\n");
+    ctx.ui.notify(`stack-ops doctor\n\n${text}`, doctorPassed(checks) ? "info" : "warning");
     return;
   }
 

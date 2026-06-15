@@ -5,7 +5,7 @@ import { stdin as input, stdout as output } from "node:process";
 import cac from "cac";
 import { cleanTarget } from "../core/clean.js";
 import { runContextBudget } from "../core/context-budget.js";
-import { getDoctorChecks } from "../core/doctor.js";
+import { doctorPassed, getDoctorChecks } from "../core/doctor.js";
 import { createContext, defaultState, ensureDirs, readState, renderState, writeState } from "../core/state.js";
 
 declare const STACK_OPS_VERSION: string;
@@ -33,8 +33,8 @@ function printStatus(cwd = process.cwd()) {
 function printDoctor(cwd = process.cwd()) {
   const checks = getDoctorChecks(createContext(cwd));
   console.log("stack-ops doctor\n");
-  for (const [name, ok] of checks) console.log(`${ok ? "✓" : "⚠"} ${name}`);
-  process.exitCode = checks.every(([, ok]) => ok) ? 0 : 1;
+  for (const check of checks) console.log(`${check.ok ? "✓" : "⚠"} ${check.name}`);
+  process.exitCode = doctorPassed(checks) ? 0 : 1;
 }
 
 export async function main(argv = process.argv, cwd = process.cwd()) {

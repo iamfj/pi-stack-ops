@@ -3,7 +3,11 @@ import { delimiter, join } from "node:path";
 import type { StackOpsContext } from "./state.js";
 import { ensureDirs } from "./state.js";
 
-export type DoctorCheck = [name: string, ok: boolean];
+export type DoctorCheck = { name: string; ok: boolean; required: boolean };
+
+export function doctorPassed(checks: DoctorCheck[]) {
+  return checks.every((check) => check.ok || !check.required);
+}
 
 export function commandExists(command: string, path = process.env.PATH ?? "") {
   if (!/^[A-Za-z0-9._-]+$/.test(command)) return false;
@@ -23,11 +27,11 @@ export function commandExists(command: string, path = process.env.PATH ?? "") {
 export function getDoctorChecks(context: StackOpsContext, path = process.env.PATH ?? ""): DoctorCheck[] {
   ensureDirs(context);
   return [
-    ["artifact directory", existsSync(context.root)],
-    ["state file", existsSync(context.stateFile)],
-    ["stax", commandExists("stax", path)],
-    ["gh", commandExists("gh", path)],
-    ["git", commandExists("git", path)],
-    ["semble", commandExists("semble", path)],
+    { name: "artifact directory", ok: existsSync(context.root), required: true },
+    { name: "state file", ok: existsSync(context.stateFile), required: true },
+    { name: "stax", ok: commandExists("stax", path), required: true },
+    { name: "gh", ok: commandExists("gh", path), required: true },
+    { name: "git", ok: commandExists("git", path), required: true },
+    { name: "semble", ok: commandExists("semble", path), required: false },
   ];
 }
