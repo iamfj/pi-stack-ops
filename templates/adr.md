@@ -29,4 +29,4 @@ Proposed | Accepted | Superseded
 ## Stack impact
 
 - Spec PR: <branch/PR>
-- Follow-up implementation slices affected: <slice ids or TBD until planning>
+- Follow-up implementation slices affected: <slice ids, or "unknown until planning">

@@ -7,6 +7,8 @@ Stack root: `<trunk or parent>`
 Plan artifact: `.pi/stack-ops/plans/<feature>.plan.md`
 Generated: `<iso timestamp>`
 
+Template note: placeholders are allowed in this template only. Generated plans must replace every placeholder before handoff.
+
 ## Goal
 
 <one sentence>
@@ -50,7 +52,7 @@ Acceptance:
 - <specific outcome>
 
 Validation:
-- `<exact command>`
+- `<exact safe command>`
 
 Stop conditions:
 - <condition requiring human approval or replanning>

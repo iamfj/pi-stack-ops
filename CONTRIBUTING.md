@@ -76,7 +76,8 @@ Use these paths when changing package behavior.
 
 | Path | Purpose |
 | --- | --- |
-| `extensions/stack-ops.ts` | Pi extension command and footer status updates. |
+| `src/extensions/stack-ops.ts` | Source for Pi extension command and footer status updates. |
+| `extensions/stack-ops.js` | Packaged extension entrypoint generated for distribution. |
 | `src/cli/` | Standalone CLI source for status, doctor, init, and cleanup. |
 | `src/core/` | Shared CLI state, doctor, and cleanup logic. |
 | `agents/` | Packaged `stack-ops.*` agent definitions. |
@@ -93,10 +94,10 @@ later PRs are focused implementation slices.
 When changing workflow-facing behavior:
 
 - Preserve the spec or ADR first workflow.
-- Keep generated plans under `.pi/stack-ops/plans/`.
+- Keep generated plans named `.pi/stack-ops/plans/<feature>.plan.md`.
 - Keep runtime state and evidence under `.pi/stack-ops/`.
 - Update relevant agents, prompts, skills, templates, and docs together.
-- End workflow-facing changes with a compact stack-ops summary format.
+- End workflow-facing changes with the compact summary in `templates/session-summary.md`.
 
 ## Agent and resource conventions
 
