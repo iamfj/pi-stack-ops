@@ -345,6 +345,17 @@ Examples include:
 - `stack-ops.slice-builder` for one approved slice at a time.
 - `stack-ops.security-reviewer` for security, privacy, auth, secrets, and
   dependency risk.
+- `stack-ops.bug-hunter` for regressions, failing tests, stack traces, and
+  unexplained behavior.
+- `stack-ops.test-strategist` for coverage gaps, regression cases, edge cases,
+  and flake triage.
+- `stack-ops.contract-reviewer` for public APIs, CLIs, schemas, configs, package
+  exports, and observable behavior.
+- `stack-ops.delivery-engineer` for CI, build, packaging, versioning, and
+  distribution failures.
+- `stack-ops.data-reliability-engineer`, `stack-ops.performance-engineer`, and
+  `stack-ops.search-rag-engineer` for data, performance, and AI/search slices
+  when the repository needs those domains.
 - `stack-ops.readiness` for deciding whether a phase, PR, slice, or stack can
   advance.
 - `stack-ops.stack-operator` for stax and GitHub mechanics after readiness.
