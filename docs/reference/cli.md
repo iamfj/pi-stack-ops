@@ -36,7 +36,7 @@ Prints phase, stack, slice, branch, plan, gates, blockers, and next prompts. If 
 stack-ops doctor
 ```
 
-Checks artifact directory, state file, `stax`, `gh`, `git`, and `semble`. Exit code is `0` only when all checks pass; otherwise `1`. A missing `semble` check is optional for simple workflows, but the current command still exits non-zero when it is missing.
+Checks artifact directory, state file, `stax`, `gh`, `git`, and `semble`. Exit code is `0` when all required checks pass; otherwise `1`. A missing `semble` check is optional for simple workflows and does not make `doctor` return non-zero.
 
 ## `clean`
 

@@ -7,7 +7,7 @@ Start with the smallest command that explains the symptom.
 | `doctor` shows `⚠ stax` | `which stax && stax --help` | Install `stax` or fix PATH before stack operations. |
 | `doctor` shows `⚠ gh` | `gh auth status` | Install/authenticate GitHub CLI. |
 | `doctor` shows `⚠ git` | `git --version` | Install Git or fix PATH. |
-| `doctor` shows `⚠ semble` | `which semble` | You can continue simple workflows, but `doctor` still exits non-zero until `semble` is installed. Install it when planning needs repository discovery. |
+| `doctor` shows `⚠ semble` | `which semble` | You can continue simple workflows. Install it when planning needs repository discovery. |
 | Status is `blocked` with state parse error | `cat .pi/stack-ops/state.json` | Recover from latest summary, then rerun the appropriate prompt or `stack-ops init` if resetting. |
 | Missing plan | `ls .pi/stack-ops/plans` | Rerun `/plan <approved-spec-path>`; do not invent a plan from memory. |
 | Context budget verdict is `unknown` | `stack-ops context-budget --session <path> --context-window 272K --json` | Provide session and context window or stop with a handoff. |

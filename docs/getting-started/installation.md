@@ -41,7 +41,7 @@ stack-ops doctor
 ⚠ semble
 ```
 
-`doctor` creates `.pi/stack-ops/` if it does not already exist. It exits `0` only when every check passes. Optional means the workflow can continue without `semble`, but the current doctor command still returns non-zero when `semble` is missing. A `⚠ stax`, `⚠ gh`, or `⚠ git` line blocks normal stack operations.
+`doctor` creates `.pi/stack-ops/` if it does not already exist. It exits `0` when all required checks pass. Optional `semble` warnings do not block the core workflow or make `doctor` return non-zero. A `⚠ stax`, `⚠ gh`, or `⚠ git` line blocks normal stack operations.
 
 ## Initialize local state
 
