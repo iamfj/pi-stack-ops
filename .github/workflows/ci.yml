@@ -26,3 +26,24 @@ jobs:
         run: bun install --frozen-lockfile --ignore-scripts
       - name: Run release checks
         run: bun run release:check
+
+  docs:
+    name: Documentation
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: No docs-related changes
+        run: echo 'No docs-related files changed; skipping MkDocs build.'
+      - name: Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - name: Setup uv
+        uses: astral-sh/setup-uv@d4b2f3b6ecc6e67c4457f6d3e41ec42d3d0fcb86
+        with:
+          enable-cache: true
+          cache-dependency-glob: uv.lock
+      - name: Install documentation dependencies
+        run: uv sync --frozen
+      - name: Build documentation
+        run: uv run mkdocs build --strict
