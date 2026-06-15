@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json.schemastore.org/package.json",
+  "name": "pi-stack-ops",
+  "version": "0.1.0",
+  "description": "Stax-first Pi package for spec/ADR-led stacked PR workflows with specialized agents.",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/iamfj/pi-stack-ops.git"
+  },
+  "packageManager": "bun@1.3.12",
+  "bin": {
+    "stack-ops": "./bin/stack-ops.js"
+  },
+  "files": [
+    "agents",
+    "bin",
+    "docs",
+    "extensions",
+    "prompts",
+    "schemas",
+    "skills",
+    "templates",
+    "README.md",
+    "TROUBLESHOOTING.md",
+    "CONTRIBUTING.md",
+    "LICENSE",
+    "SECURITY.md"
+  ],
+  "keywords": [
+    "pi-package",
+    "pi",
+    "stax",
+    "stacked-prs",
+    "subagents"
+  ],
+  "pi": {
+    "extensions": ["./extensions"],
+    "skills": ["./skills"],
+    "prompts": ["./prompts"]
+  },
+  "scripts": {
+    "build": "tsup && chmod +x ./bin/stack-ops.js",
+    "check": "tsc --noEmit",
+    "test": "bun test",
+    "doctor": "bun ./src/cli/index.ts doctor",
+    "release": "semantic-release",
+    "prepack": "bun run build",
+    "pack:dry-run": "bun run build && npm pack --dry-run",
+    "release:check": "bun run check && bun run test && bun run pack:dry-run"
+  },
+  "dependencies": {
+    "cac": "7.0.0"
+  },
+  "devDependencies": {
+    "@types/bun": "1.3.14",
+    "@types/node": "24.12.4",
+    "semantic-release": "24.2.9",
+    "tsup": "8.5.1",
+    "typescript": "5.9.3"
+  },
+  "peerDependencies": {
+    "@earendil-works/pi-coding-agent": ">=0.74.0 <1",
+    "typebox": ">=1.1.38 <2"
+  },
+  "trustedDependencies": [],
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "license": "MIT"
+}
