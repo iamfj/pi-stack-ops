@@ -12,6 +12,7 @@ Install Stack Ops in the environment where you run Pi and work on the target rep
 | `stax` | Yes for stacked PR mechanics | Creates, submits, restacks, and merges stacks. | `stax --help` |
 | GitHub CLI `gh` | Yes for GitHub PR operations | Reads and updates PRs. | `gh auth status` |
 | `semble` | Optional but recommended | Repository discovery for planning. Doctor reports it so maintainers know whether richer discovery is available. | `semble --help` |
+| `code-review-graph` | Optional | Read-only impact analysis for dependency, call-path, and blast-radius review. Doctor reports it without blocking workflows. | `code-review-graph --help` |
 
 ## Install Stack Ops
 
@@ -39,9 +40,10 @@ stack-ops doctor
 ✓ gh
 ✓ git
 ⚠ semble
+⚠ code-review-graph
 ```
 
-`doctor` creates `.pi/stack-ops/` if it does not already exist. It exits `0` when all required checks pass. Optional `semble` warnings do not block the core workflow or make `doctor` return non-zero. A `⚠ stax`, `⚠ gh`, or `⚠ git` line blocks normal stack operations.
+`doctor` creates `.pi/stack-ops/` if it does not already exist. It exits `0` when all required checks pass. Optional `semble` and `code-review-graph` warnings do not block the core workflow or make `doctor` return non-zero. A `⚠ stax`, `⚠ gh`, or `⚠ git` line blocks normal stack operations.
 
 ## Initialize local state
 

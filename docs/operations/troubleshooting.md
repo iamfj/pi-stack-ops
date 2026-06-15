@@ -8,6 +8,7 @@ Start with the smallest command that explains the symptom.
 | `doctor` shows `⚠ gh` | `gh auth status` | Install/authenticate GitHub CLI. |
 | `doctor` shows `⚠ git` | `git --version` | Install Git or fix PATH. |
 | `doctor` shows `⚠ semble` | `which semble` | You can continue simple workflows. Install it when planning needs repository discovery. |
+| `doctor` shows `⚠ code-review-graph` | `which code-review-graph` | You can continue. Install it when broad changes need read-only dependency, call-path, or blast-radius analysis. |
 | Status is `blocked` with state parse error | `cat .pi/stack-ops/state.json` | Recover from latest summary, then rerun the appropriate prompt or `stack-ops init` if resetting. |
 | Missing plan | `ls .pi/stack-ops/plans` | Rerun `/plan <approved-spec-path>`; do not invent a plan from memory. |
 | Context budget verdict is `unknown` | `stack-ops context-budget --session <path> --context-window 272K --json` | Provide session and context window or stop with a handoff. |

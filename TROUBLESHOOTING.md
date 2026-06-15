@@ -22,8 +22,8 @@ stack-ops doctor
 ```
 
 Doctor checks for the local artifact directory, `state.json`, `stax`, `gh`,
-`git`, and `semble`. `semble` is optional, so a warning for `semble` doesn't
-block the core workflow.
+`git`, `semble`, and `code-review-graph`. `semble` and `code-review-graph` are
+optional, so warnings for those tools don't block the core workflow.
 
 ## Common problems on all platforms
 

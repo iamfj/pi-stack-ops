@@ -225,6 +225,9 @@ change.
 - [GitHub CLI](https://cli.github.com) for GitHub PR operations
 - Optional: [Semble](https://github.com/MinishLab/semble) for code discovery
   during planning
+- Optional: [code-review-graph](https://github.com/iamfj/code-review-graph) for
+  read-only dependency, call-path, and blast-radius analysis during
+  impact-sensitive work
 
 Recommended companion Pi packages:
 
