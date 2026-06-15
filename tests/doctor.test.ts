@@ -10,11 +10,13 @@ function tempContext() {
 }
 
 describe("stack-ops doctor", () => {
-  test("marks semble optional and required checks required", () => {
+  test("marks optional tools optional and required checks required", () => {
     const context = tempContext();
     const checks = getDoctorChecks(context, "");
 
-    expect(checks.find((check) => check.name === "semble")?.required).toBe(false);
+    for (const name of ["semble", "code-review-graph"]) {
+      expect(checks.find((check) => check.name === name)?.required).toBe(false);
+    }
     for (const name of ["artifact directory", "state file", "stax", "gh", "git"]) {
       expect(checks.find((check) => check.name === name)?.required).toBe(true);
     }
@@ -28,6 +30,7 @@ describe("stack-ops doctor", () => {
       { name: "gh", ok: true, required: true },
       { name: "git", ok: true, required: true },
       { name: "semble", ok: false, required: false },
+      { name: "code-review-graph", ok: false, required: false },
     ];
 
     expect(doctorPassed(checks)).toBe(true);
@@ -37,6 +40,7 @@ describe("stack-ops doctor", () => {
     const checks: DoctorCheck[] = [
       { name: "stax", ok: false, required: true },
       { name: "semble", ok: false, required: false },
+      { name: "code-review-graph", ok: false, required: false },
     ];
 
     expect(doctorPassed(checks)).toBe(false);

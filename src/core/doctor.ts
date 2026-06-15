@@ -33,5 +33,6 @@ export function getDoctorChecks(context: StackOpsContext, path = process.env.PAT
     { name: "gh", ok: commandExists("gh", path), required: true },
     { name: "git", ok: commandExists("git", path), required: true },
     { name: "semble", ok: commandExists("semble", path), required: false },
+    { name: "code-review-graph", ok: commandExists("code-review-graph", path), required: false },
   ];
 }
