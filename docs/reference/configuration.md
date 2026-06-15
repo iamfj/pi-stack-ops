@@ -12,7 +12,7 @@ available in your repository.
 | Slice shape | Plan review | Ask Stack Ops to split, rename, or reorder slices before implementation starts. |
 | Validation | Plan commands | Make validation commands project-specific. Use your real test, lint, typecheck, build, and manual review steps. |
 | Context-budget checks | CLI options | Use `stack-ops context-budget --session`, `--session-dir`, `--context-window`, and `--max-used-percent` when automatic session lookup is ambiguous. |
-| Tool discovery | `PATH` | `doctor` checks `stax`, `gh`, `git`, and `semble` by scanning your shell path. |
+| Tool discovery | `PATH` | `doctor` checks required tools `stax`, `gh`, and `git`, plus optional tools `semble` and `code-review-graph`, by scanning your shell path. |
 
 ## What is fixed
 

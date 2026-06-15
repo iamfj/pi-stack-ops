@@ -26,6 +26,7 @@ stack-ops status
 
 - `⚠ stax`, `⚠ gh`, or `⚠ git`: install or authenticate the missing tool before using stack prompts.
 - `⚠ semble`: continue for simple work, but expect less repository discovery in planning.
+- `⚠ code-review-graph`: continue for simple work, but expect less automated impact analysis for broad or dependency-sensitive changes.
 - Status says `blocked`: inspect `.pi/stack-ops/state.json` and [Handle blockers](handle-blockers.md).
 
 ## Next steps

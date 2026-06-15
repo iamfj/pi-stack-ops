@@ -17,7 +17,7 @@ stack-ops init
 stack-ops status
 ```
 
-If `doctor` reports only `⚠ semble`, you can continue with the quickstart. `semble` improves repository discovery during planning, but it is not required for the basic workflow. Fix `⚠ stax`, `⚠ gh`, or `⚠ git` before you continue.
+If `doctor` reports only optional warnings for `⚠ semble` or `⚠ code-review-graph`, you can continue with the quickstart. `semble` improves repository discovery during planning, and `code-review-graph` can help with read-only impact analysis, but neither tool is required for the basic workflow. Fix `⚠ stax`, `⚠ gh`, or `⚠ git` before you continue.
 
 Expected output shape:
 
