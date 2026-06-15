@@ -9,6 +9,6 @@ main
       └─ stack/admin-audit-logging-api
 ```
 
-Artifacts to expect: committed spec at `docs/specs/admin-audit-logging.md`, local plan at `.pi/stack-ops/plans/admin-audit-logging.md`, validation notes under `.pi/stack-ops/validation/`.
+Artifacts to expect: committed spec at `docs/specs/admin-audit-logging.md`, local plan at `.pi/stack-ops/plans/admin-audit-logging.plan.md`, validation notes under `.pi/stack-ops/validation/`.
 
 Use this as a shape check, not a substitute for an approved spec and plan. Start with [Quickstart](../getting-started/quickstart.md), then use [Your first stack](../getting-started/first-stack.md) for the full walkthrough.

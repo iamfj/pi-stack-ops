@@ -1,7 +1,7 @@
 # Review and merge a stack
 
 This tutorial covers the final workflow: prepare PRs, handle feedback, check
-readiness, and merge only after approval.
+readiness, and merge only after direct current-session approval.
 
 ## Prepare draft PRs
 
@@ -29,7 +29,7 @@ Use the merge phase when review and validation evidence are complete.
 ```
 
 The merge phase gathers evidence first. It does not execute a merge without your
-approval.
+direct current-session approval for the exact merge command and target.
 
 ## Next steps
 

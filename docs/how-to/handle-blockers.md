@@ -21,12 +21,12 @@ find .pi/stack-ops/validation -maxdepth 1 -type f -print
 For implementation blockers:
 
 ```text
-/implement .pi/stack-ops/plans/admin-audit-logging.md only resolve the blockers
+/implement .pi/stack-ops/plans/admin-audit-logging.plan.md only resolve the blockers
 ```
 
 ## Expected result
 
-Each blocker is classified as accepted work, rejected scope, needs-human-decision, or external failure. Accepted fixes are validated and summarized; unresolved decisions remain visible.
+Each blocker is classified as accepted work, rejected scope, needs-human-decision, or external failure. Accepted work requires direct current-session human approval when it changes scope or behavior. Accepted fixes are validated and summarized; unresolved decisions remain visible.
 
 ## Troubleshooting
 

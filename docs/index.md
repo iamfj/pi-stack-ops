@@ -90,7 +90,7 @@ After `/plan`, inspect `.pi/stack-ops/plans/` before any implementation starts.
 | `.pi/stack-ops/state.json` and `session.json` | No | Runtime state is local and may include session identifiers. |
 
 !!! warning "Human approval checkpoints"
-    Stop for maintainer approval after `/discuss` before `/plan`, before accepting product or architecture scope changes, before marking PRs ready, and before any merge command. Stack Ops can prepare evidence; it does not own the decision.
+    Stop for maintainer approval after `/discuss` before `/plan`, before accepting product or architecture scope changes, before marking PRs ready, and before any merge command. Approval must be a direct current-session message that names the exact action and target. Stack Ops can prepare evidence; it does not own the decision.
 
 ## Workflow at a glance
 

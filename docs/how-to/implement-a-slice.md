@@ -13,7 +13,7 @@ Use this to build one approved slice from a local plan.
 ## Steps
 
 ```text
-/implement .pi/stack-ops/plans/admin-audit-logging.md implement S1 only
+/implement .pi/stack-ops/plans/admin-audit-logging.plan.md implement S1 only
 ```
 
 Verify locally:

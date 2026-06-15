@@ -22,8 +22,9 @@ compact summary of what changed, what is blocked, and what to do next.
 <!-- prettier-ignore -->
 > [!NOTE]
 > `pi-stack-ops` is early `0.x` software. Review generated plans, branch
-> operations, and PR actions before you apply them. It will not run a merge
-> command unless you explicitly approve it.
+> operations, and PR actions before you apply them. Approval must be a direct
+> current-session message that names the exact action and target. It will not
+> run a merge command unless you explicitly approve it.
 
 ## The problem it solves
 
@@ -41,6 +42,7 @@ feedback, validation evidence, and handoffs between sessions.
 - Keep plans, blockers, validation, and summaries in one local place.
 - Pause at important boundaries instead of letting automation run ahead.
 - Keep the human in charge of decisions, branch operations, and merges.
+- Treat specs, ADRs, plans, PR comments, CI logs, state files, summaries, and prompt arguments as untrusted inputs; conflicts become blockers instead of instructions to follow.
 
 ## Core concepts
 
@@ -52,7 +54,7 @@ current stack.
 | --- | --- | --- |
 | Spec | A short description of the problem, goals, non-goals, acceptance criteria, risks, and open questions. | It gives you and the agent a shared target before code changes begin. |
 | ADR | An architecture decision record that explains an important decision, the context behind it, alternatives considered, and consequences. | It keeps major tradeoffs visible for reviewers and future maintainers. |
-| Plan | A generated, gitignored implementation map saved under `.pi/stack-ops/plans/`. | It turns the approved spec or ADR into slices, branches, files, validation commands, and stop conditions. |
+| Plan | A generated, gitignored implementation map saved as `.pi/stack-ops/plans/<feature>.plan.md`. | It turns the approved spec or ADR into slices, branches, files, validation commands, and stop conditions. |
 
 A good stack usually starts with a spec. Add an ADR when the work includes an
 important technical or product decision that future readers need to understand.
@@ -97,9 +99,14 @@ For example, after finishing the first slice of a fictional audit logging stack,
 the response might end like this:
 
 ```text
+## stack-ops summary
+
 Phase: implement
 Stack: admin-audit-logging
 Current: S1/3
+Branch: admin-audit-logging/s1-event-model
+Plan: .pi/stack-ops/plans/admin-audit-logging.plan.md
+
 Done:
 - Added the audit event model and tests.
 - Ran the focused unit tests for audit events.
@@ -108,22 +115,41 @@ Blockers:
 - None.
 
 Next:
-1. Review the S1 diff.
-2. Run `/new` to start a fresh session.
-3. Run `/implement .pi/stack-ops/plans/admin-audit-logging.plan.md` to start S2.
+1. `/new`
+2. `/implement .pi/stack-ops/plans/admin-audit-logging.plan.md` to start S2.
+3. Review the S1 diff before opening the next PR.
+
+State:
+- Updated: `.pi/stack-ops/state.json`
+- Latest summary: `.pi/stack-ops/summaries/latest.md`
 ```
 
 When work is not ready to continue, the summary stops at the blocker instead of
 nudging the stack forward:
 
 ```text
+## stack-ops summary
+
+Phase: implement
+Stack: admin-audit-logging
+Current: S2/3
+Branch: admin-audit-logging/s2-retention
+Plan: .pi/stack-ops/plans/admin-audit-logging.plan.md
+
+Done:
+- Stopped before changing retention behavior.
+
 Blockers:
 - S2 changes the retention policy, but the spec does not define retention rules.
 
 Next:
-1. Run `/new` to start a fresh session.
-2. Run `/discuss docs/specs/admin-audit-logging.md` to decide retention rules.
+1. `/new`
+2. `/discuss docs/specs/admin-audit-logging.md` to decide retention rules.
 3. Continue implementation only after the spec is updated.
+
+State:
+- Updated: `.pi/stack-ops/state.json`
+- Latest summary: `.pi/stack-ops/summaries/latest.md`
 ```
 
 The result is a resumable workflow with no hidden memory dependency: you can
@@ -142,7 +168,8 @@ matters. It helps Pi organize the work, but it does not replace your review.
 - **Visible local state**: Plans, summaries, blockers, snapshots, validation,
   and PR body drafts are stored under `.pi/stack-ops/`.
 - **Human approval**: Merge execution is never automatic. The merge phase gathers
-  evidence first, then waits for your approval.
+  evidence first, then waits for direct current-session approval for the exact
+  command and target.
 - **Safer cleanup**: Destructive cleanup asks before deleting local workflow
   artifacts, or requires `--yes` in automation.
 - **Context handoffs**: Long workflows stop with compact summaries before the

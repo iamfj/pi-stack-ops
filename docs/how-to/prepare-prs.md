@@ -13,7 +13,7 @@ Use this after approved slices are implemented and validated.
 ## Steps
 
 ```text
-/finish .pi/stack-ops/plans/admin-audit-logging.md
+/finish .pi/stack-ops/plans/admin-audit-logging.plan.md
 ```
 
 Inspect drafts:
@@ -31,7 +31,7 @@ PR bodies exist under `.pi/stack-ops/pr-bodies/`, PRs are processed bottom-up, r
 
 - Stop if lower PRs are blocked.
 - Stop if validation evidence is stale.
-- Do not merge from `/finish`; use `/merge` only after explicit approval.
+- Do not merge from `/finish`; use `/merge` only after explicit current-session approval for the exact merge command and target.
 
 ## Next steps
 

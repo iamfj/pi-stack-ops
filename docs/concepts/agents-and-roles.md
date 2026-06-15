@@ -16,14 +16,18 @@ The package includes these role types.
 
 | Role | Purpose |
 | --- | --- |
+| `stack-ops.architect` | Reviews architecture direction and tradeoffs. |
 | `stack-ops.spec-writer` | Drafts and refines specs or ADRs. |
 | `stack-ops.planner` | Creates local implementation plans. |
 | `stack-ops.slice-builder` | Implements one approved slice. |
 | `stack-ops.reviewer` | Reviews specs, plans, diffs, and slices. |
 | `stack-ops.security-reviewer` | Checks security, privacy, secrets, and dependency risk. |
 | `stack-ops.validator` | Runs focused validation and summarizes evidence. |
-| `stack-ops.readiness` | Decides whether a phase, PR, slice, or stack can advance. |
-| `stack-ops.stack-operator` | Handles stax and GitHub mechanics after readiness. |
+| `stack-ops.workflow-reviewer` | Audits workflow and artifact hygiene; it reports only and is not the gate. |
+| `stack-ops.readiness` | Returns the READY/BLOCKED gate decision for a phase, PR, slice, or stack. |
+| `stack-ops.blocker-resolver` | Applies only explicitly accepted blocker fixes for the active slice. |
+| `stack-ops.stack-operator` | Handles stax and GitHub mechanics after readiness and explicit approval. |
+| `stack-ops.state-keeper` | Performs optional state-only maintenance when a prompt asks for it. |
 
 ## Next steps
 

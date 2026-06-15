@@ -1,6 +1,6 @@
 # Your first stack
 
-This walkthrough continues the `admin-audit-logging` quickstart after `/plan` has produced `.pi/stack-ops/plans/admin-audit-logging.md`.
+This walkthrough continues the `admin-audit-logging` quickstart after `/plan` has produced `.pi/stack-ops/plans/admin-audit-logging.plan.md`.
 
 ## Target stack shape
 
@@ -31,7 +31,7 @@ If the plan is vague, rerun or refine `/plan` before writing code. See [Generate
 ## 2. Implement S1 only
 
 ```text
-/implement .pi/stack-ops/plans/admin-audit-logging.md implement S1 only
+/implement .pi/stack-ops/plans/admin-audit-logging.plan.md implement S1 only
 ```
 
 Expected result:
@@ -75,7 +75,7 @@ ls .pi/stack-ops/blockers
 Resume with the prompt suggested by `status`, usually:
 
 ```text
-/implement .pi/stack-ops/plans/admin-audit-logging.md
+/implement .pi/stack-ops/plans/admin-audit-logging.plan.md
 ```
 
 See [Resume work](../how-to/resume-work.md) if the state is stale or blocked.
@@ -85,7 +85,7 @@ See [Resume work](../how-to/resume-work.md) if the state is stale or blocked.
 After all approved slices are implemented:
 
 ```text
-/finish .pi/stack-ops/plans/admin-audit-logging.md
+/finish .pi/stack-ops/plans/admin-audit-logging.plan.md
 ```
 
 Expected artifacts:

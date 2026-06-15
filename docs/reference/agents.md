@@ -14,8 +14,11 @@ usually interact with prompts rather than calling these agents directly.
 | `stack-ops.reviewer` | Reviews specs, plans, and diffs. |
 | `stack-ops.security-reviewer` | Reviews security, privacy, auth, and dependency risk. |
 | `stack-ops.validator` | Runs validation and summarizes evidence. |
-| `stack-ops.readiness` | Checks whether work can advance. |
-| `stack-ops.stack-operator` | Handles stack and PR mechanics. |
+| `stack-ops.workflow-reviewer` | Audits workflow and artifact hygiene; reports only. |
+| `stack-ops.readiness` | Returns the READY/BLOCKED gate decision. |
+| `stack-ops.blocker-resolver` | Applies only explicitly accepted blocker fixes for the active slice. |
+| `stack-ops.stack-operator` | Handles stack and PR mechanics after readiness and explicit approval. |
+| `stack-ops.state-keeper` | Performs optional state-only maintenance. |
 
 ## Next steps
 

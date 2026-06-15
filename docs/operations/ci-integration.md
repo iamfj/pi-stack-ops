@@ -51,7 +51,7 @@ CI usually matters in three places.
 Example iterate prompt:
 
 ```text
-/iterate .pi/stack-ops/plans/admin-audit-logging.md fix the failing audit-event-model test on PR 2
+/iterate .pi/stack-ops/plans/admin-audit-logging.plan.md fix the failing audit-event-model test on PR 2
 ```
 
 ## What to include in PR evidence

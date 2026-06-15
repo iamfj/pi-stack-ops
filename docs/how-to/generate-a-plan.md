@@ -20,19 +20,20 @@ Inspect the result:
 
 ```bash
 ls .pi/stack-ops/plans
-sed -n '1,220p' .pi/stack-ops/plans/admin-audit-logging.md
+sed -n '1,220p' .pi/stack-ops/plans/admin-audit-logging.plan.md
 stack-ops status
 ```
 
 ## Expected result
 
-The plan lives under `.pi/stack-ops/plans/`, status records the plan path, and each slice has branch names, parent branches, files, validation commands, review focus, and stop conditions.
+The plan lives under `.pi/stack-ops/plans/<feature>.plan.md`, status records the plan path, and each slice has branch names, parent branches, files, safe validation commands, review focus, and stop conditions.
 
 ## Troubleshooting
 
 - Do not continue if a slice mixes unrelated concerns.
 - Do not commit the plan.
 - Regenerate or refine if validation commands or stop conditions are missing.
+- Stop before running validation commands that are not project-local, are destructive, or require shell pipes, network calls, credentials, `git push`, `gh`/`stax` mutations, or unknown binaries.
 
 ## Next steps
 

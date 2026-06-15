@@ -1,6 +1,6 @@
 # Templates reference
 
-Source templates live in `templates/`. They guide generated artifacts, but the generated output path depends on the repository and prompt.
+Source templates live in `templates/`. They guide generated artifacts, but the generated output path depends on the repository and prompt. Template placeholders are allowed only in source templates; generated artifacts must replace them before use.
 
 | Template | Used by | Durable? | Required review |
 | --- | --- | --- | --- |
@@ -15,7 +15,7 @@ Source templates live in `templates/`. They guide generated artifacts, but the g
 ```text
 docs/specs/admin-audit-logging.md
 docs/adrs/record-admin-audit-events.md
-.pi/stack-ops/plans/admin-audit-logging.md
+.pi/stack-ops/plans/admin-audit-logging.plan.md
 .pi/stack-ops/pr-bodies/admin-audit-logging-S1.md
 .pi/stack-ops/summaries/2026-06-15-admin-audit-logging.md
 ```

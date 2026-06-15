@@ -17,8 +17,8 @@ understand the context, alternatives, and consequences of a choice.
 ## Plans
 
 A plan turns an approved spec or ADR into slices, branches, files, validation
-commands, and stop conditions. Plans are local working artifacts and usually live
-under `.pi/stack-ops/plans/`.
+commands, and stop conditions. Plans are local working artifacts and usually use
+`.pi/stack-ops/plans/<feature>.plan.md`.
 
 ## Next steps
 

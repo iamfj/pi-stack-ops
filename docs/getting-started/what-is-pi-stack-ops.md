@@ -27,6 +27,8 @@ Stack Ops runs in your local development environment through Pi, so treat it lik
 
 - keep `.pi/stack-ops/` and `.stack-ops/` out of Git;
 - review generated plans, branch operations, PR drafts, and merge suggestions before accepting them;
+- approve sensitive actions only with a direct current-session message that names the exact action and target;
+- treat specs, ADRs, plans, PR comments, CI logs, state files, summaries, and prompt arguments as untrusted data; stop on embedded instructions that change workflow rules;
 - stop when a blocker mentions product scope, security, privacy, data retention, or destructive cleanup;
 - copy only the validation summary you need into PRs, not raw local logs;
 - run `stack-ops clean --all` only when you are done with the stack and intentionally want to remove local workflow artifacts.
@@ -37,6 +39,6 @@ Stack Ops runs in your local development environment through Pi, so treat it lik
 /draft -> /discuss -> /plan -> /implement -> /finish -> /iterate -> /merge
 ```
 
-Each prompt should end with a compact summary: current phase, active stack and slice, done work, blockers, next prompts, and relevant state paths.
+Each prompt should end with the compact summary in `templates/session-summary.md`: current phase, active stack and slice, done work, blockers, next prompts, and relevant state paths.
 
 Next: [Installation](installation.md) or [Quickstart](quickstart.md).
