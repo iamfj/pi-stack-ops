@@ -23,9 +23,9 @@
 | Need | File |
 | --- | --- |
 | Product/package overview | `README.md` |
-| Design concept | `docs/concept.md` |
+| User workflow concept | `docs/concepts/stack-ops-methodology.md` |
 | Security policy | `SECURITY.md` |
-| Security hardening | `docs/security-hardening.md` |
+| User safety model | `docs/getting-started/what-is-pi-stack-ops.md` |
 | Plan artifact template | `templates/plan.md` |
 | Session summary template | `templates/session-summary.md` |
 

@@ -83,7 +83,7 @@ Use these paths when changing package behavior.
 | `prompts/` | Slash prompt templates for workflow phases. |
 | `skills/` | Packaged skills for stack-ops workflows and plans. |
 | `templates/` | Spec, ADR, plan, PR body, and summary templates. |
-| `docs/` | Concept and security hardening documentation. |
+| `docs/` | User-facing documentation site source. |
 
 ## Workflow expectations
 

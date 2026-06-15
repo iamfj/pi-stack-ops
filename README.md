@@ -169,8 +169,7 @@ Because Pi extensions operate in your local development environment,
 - It caps displayed state size to avoid noisy or unsafe output.
 - It treats destructive filesystem changes as explicit, confirmed actions.
 
-For more detail, see the [security policy](SECURITY.md) and
-[security hardening notes](docs/security-hardening.md).
+For more detail, see the [security policy](SECURITY.md).
 
 ## Benefits
 
