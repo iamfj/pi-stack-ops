@@ -6,11 +6,11 @@
   "type": "module",
   "repository": {
     "type": "git",
-    "url": "https://github.com/iamfj/pi-stack-ops.git"
+    "url": "git+https://github.com/iamfj/pi-stack-ops.git"
   },
   "packageManager": "bun@1.3.12",
   "bin": {
-    "stack-ops": "./bin/stack-ops.js"
+    "stack-ops": "bin/stack-ops.js"
   },
   "files": [
     "agents",
@@ -65,8 +65,7 @@
   },
   "trustedDependencies": [],
   "publishConfig": {
-    "access": "public",
-    "provenance": true
+    "access": "public"
   },
   "engines": {
     "node": ">=20"
