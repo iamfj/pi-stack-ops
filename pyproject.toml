@@ -1,0 +1,12 @@
+[project]
+name = "pi-stack-ops-docs"
+version = "0.1.0"
+description = "Documentation site for pi-stack-ops."
+requires-python = ">=3.11"
+dependencies = [
+  "mkdocs==1.6.1",
+  "mkdocs-material==9.6.15",
+]
+
+[tool.uv]
+package = false

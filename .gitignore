@@ -6,6 +6,10 @@ node_modules/
 dist/
 bin/stack-ops.js
 extensions/*.js
+site/
+
+# Python documentation environment
+.venv/
 
 # Local environment files
 .env
