@@ -1,0 +1,98 @@
+site_name: pi-stack-ops
+site_description: User documentation for pi-stack-ops stacked PR workflows in Pi.
+site_url: https://pi-stack-ops.vercel.app
+repo_url: https://github.com/iamfj/pi-stack-ops
+repo_name: iamfj/pi-stack-ops
+edit_uri: edit/main/docs/
+strict: true
+
+nav:
+  - Home: index.md
+  - Getting started:
+      - Overview: getting-started/index.md
+      - What is pi-stack-ops?: getting-started/what-is-pi-stack-ops.md
+      - Installation: getting-started/installation.md
+      - Quickstart: getting-started/quickstart.md
+      - Your first stack: getting-started/first-stack.md
+  - Concepts:
+      - Overview: concepts/index.md
+      - Stack Ops methodology: concepts/stack-ops-methodology.md
+      - Stacks and slices: concepts/stacks-and-slices.md
+      - Specs, ADRs, and plans: concepts/specs-adrs-and-plans.md
+      - Agents and roles: concepts/agents-and-roles.md
+      - State and artifacts: concepts/state-and-artifacts.md
+  - Tutorials:
+      - Overview: tutorials/index.md
+      - Create your first stack: tutorials/create-your-first-stack.md
+      - Run a sliced implementation: tutorials/run-a-sliced-implementation.md
+      - Review and merge a stack: tutorials/review-and-merge-a-stack.md
+  - How-to guides:
+      - Overview: how-to/index.md
+      - Initialize a project: how-to/initialize-a-project.md
+      - Draft a spec or ADR: how-to/draft-a-spec-or-adr.md
+      - Generate a plan: how-to/generate-a-plan.md
+      - Implement a slice: how-to/implement-a-slice.md
+      - Resume work: how-to/resume-work.md
+      - Handle blockers: how-to/handle-blockers.md
+      - Prepare PRs: how-to/prepare-prs.md
+      - Validate a stack: how-to/validate-a-stack.md
+  - Examples:
+      - Overview: examples/index.md
+      - Small feature stack: examples/small-feature-stack.md
+      - Documentation-only stack: examples/docs-only-stack.md
+      - Security hardening stack: examples/security-hardening-stack.md
+      - Multi-agent workflow: examples/multi-agent-workflow.md
+  - Reference:
+      - Overview: reference/index.md
+      - CLI: reference/cli.md
+      - Commands: reference/commands.md
+      - Configuration: reference/configuration.md
+      - Agents: reference/agents.md
+      - Directory layout: reference/directory-layout.md
+      - Templates: reference/templates.md
+      - State files: reference/state-files.md
+  - Operations:
+      - Overview: operations/index.md
+      - CI integration: operations/ci-integration.md
+      - Troubleshooting: operations/troubleshooting.md
+
+theme:
+  name: material
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.indexes
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+  palette:
+    - scheme: default
+      primary: black
+      accent: indigo
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - scheme: slate
+      primary: black
+      accent: indigo
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - toc:
+      permalink: true
+
+validation:
+  omitted_files: warn
+  absolute_links: warn
+  unrecognized_links: warn
+  anchors: warn
