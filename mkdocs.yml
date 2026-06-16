@@ -1,6 +1,6 @@
 site_name: pi-stack-ops
 site_description: User documentation for pi-stack-ops stacked PR workflows in Pi.
-site_url: https://pi-stack-ops.vercel.app
+site_url: https://pi-stack-ops.iamfj.xyz
 repo_url: https://github.com/iamfj/pi-stack-ops
 repo_name: iamfj/pi-stack-ops
 edit_uri: edit/main/docs/
